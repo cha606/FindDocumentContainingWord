@@ -1,11 +1,5 @@
 import os
 import docx
-#The error is reading files
-
-    
-
-#
-
 
 
 
@@ -29,7 +23,7 @@ def searchThroughFile(filename):
             print(f"{l} is not one of them")
 
 
-path=r"C:\Users\Richard\Desktop\LookupTest" #MOstImportant
+path=r"C:\Users\Richard\Desktop\LookupTest" #folder holding the documents 
 #os.chdir(path)
 
 for i in os.listdir(path):
@@ -41,7 +35,7 @@ for i in os.listdir(path):
                 searchThroughFileDocx(y)
             else:
                 searchThroughFile(y)
-    print(f"file is {New}")
+    print(f"file containing word is {New}")
     #if os.path.isfile(New):
         #print(f"file is def a file{New}")
     if "docx" in i:
