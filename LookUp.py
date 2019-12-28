@@ -23,7 +23,7 @@ def searchThroughFile(filename):
             print(f"{l} is not one of them")
 
 
-path=r"C:\Users\Richard\Desktop\LookupTest" #folder holding the documents 
+path=os.path.join(os.path.join(os.environ['USERPROFILE']), 'Desktop') #folder holding the documents 
 #os.chdir(path)
 
 for i in os.listdir(path):
