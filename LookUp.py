@@ -23,27 +23,32 @@ def searchThroughFile(filename):
             print(f"{l} is not one of them")
 
 
-path=r"C:\Users\Richard\Desktop\LookupTest" #folder holding the documents 
+path=os.path.join(os.path.join(os.environ['USERPROFILE']), 'Documents') #folder holding the documents
 #os.chdir(path)
 
 for i in os.listdir(path):
     New=os.path.join(path,i)
     if os.path.isdir(New):
-        for y in os.listdir(New):
-            print(f"file is {y}")
-            if "docx" in y:
-                searchThroughFileDocx(y)
-            else:
-                searchThroughFile(y)
+        try:
+            for y in os.listdir(New):
+                print(f"file is {y}")
+                if "docx" in y:
+                    searchThroughFileDocx(y)
+                else:
+                    searchThroughFile(y)
+        except Exception as e:
+            print(f"File {New} has an {e} exception ")
     print(f"file containing word is {New}")
     #if os.path.isfile(New):
         #print(f"file is def a file{New}")
-    if "docx" in i:
-        searchThroughFileDocx(os.path.join(path,New))
-    else:
-        searchThroughFile(os.path.join(path,New))
+    try:
+        if "docx" in i:
+            searchThroughFileDocx(os.path.join(path,New))
+        else:
+            searchThroughFile(os.path.join(path,New))
+    except Exception as e:
+        print(f"File {New} has an {e} exception ")
 print("\n\n\n")
 
 for x,y in enumerate(Results):
     print(str(x) + ", " + y)
-        
