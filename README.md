@@ -1,4 +1,4 @@
 # FindDocumentContainingWord
 This was an old file that I made when my father needed help finding a file which he only knew a single word in it.
 
-Right now it works by using a folder called "LookupTest" which is localized. This was done because at the time I thought that there was no universal path to the desktop of document section for security reasons... but there is. So in a future update this will be non localized.
+This is now nonlocalized so it works for every computer. There are a bunch of try-except statements because of problems with permission and some files that were looked at by the program are not valid like a file made by the MacAfee program in 'Documents'. This assumes that the file is in the section of the computer called "Documents" and assumes that that exists. If a broader search range is needed, replace line 26 with path = os.path.join(os.environ['USERPROFILE']).
